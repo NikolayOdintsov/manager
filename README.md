@@ -2,5 +2,11 @@
 
 ## Libraries for the project
 npm install --save redux react-redux
+
 npm install --save asap
+
 npm install --save firebase
+
+npm install --save react-thunk
+
+https://github.com/reduxjs/redux-thunk
