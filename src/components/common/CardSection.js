@@ -1,10 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
+import {View} from 'react-native';
 
 const CardSection = (props) => {
     //trick to pass everything from parent
+    //style as array - to allow override styles
     return (
-        <View style={styles.containerStyle}>
+        <View style={[styles.containerStyle, props.style]}>
             {props.children}
         </View>
     );
@@ -22,4 +23,4 @@ const styles = {
     }
 };
 
-export { CardSection };
+export {CardSection};
