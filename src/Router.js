@@ -8,17 +8,17 @@ const RouterComponent = () => {
     return (
         <Router>
             <Scene key='root' hideNavBar>
-                <Scene key='auth'>
+                <Scene key='auth' initial>
                     <Scene key='login' component={LoginForm} title='Please login'/>
                 </Scene>
-                <Scene key='main' initial>
+                <Scene key='main'>
                     <Scene
                         key='employeeList'
                         component={EmployeeList}
                         title='Employees'
                         rightTitle='Add'
                         onRight={() => Actions.employeeCreate()}
-                        />
+                    />
                     <Scene
                         key='employeeCreate'
                         component={EmployeeCreate}
