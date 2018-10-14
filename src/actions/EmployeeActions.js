@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 import {Actions} from 'react-native-router-flux';
-import {EMPLOYEE_UPDATE} from './types';
+import {EMPLOYEE_CREATE, EMPLOYEE_UPDATE} from './types';
 
 export const employeeUpdate = ({prop, value}) => {
     return {
@@ -13,10 +13,13 @@ export const employeeCreate = ({name, phone, shift}) => {
     const {currentUser} = firebase.auth();
 
     //No need in 'redux-thung' 'dispatch' as we don't care about response.
-    return () => {
+    return (dispatch) => {
         firebase.database().ref(`/users/${currentUser.uid}/employees`)
             .push({name, phone, shift})
             //Actions.pop() - to just return without 'Back' button
-            .then(() => Actions.pop());
+            .then(() => {
+                dispatch({type: EMPLOYEE_CREATE});
+                Actions.pop();
+            });
     };
 };
