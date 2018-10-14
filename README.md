@@ -10,3 +10,5 @@ npm install --save firebase
 npm install --save react-thunk
 
 https://github.com/reduxjs/redux-thunk
+
+npm install --save react-native-router-flux
