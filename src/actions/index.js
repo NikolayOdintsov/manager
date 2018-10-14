@@ -49,5 +49,5 @@ const loginUserSuccess = (dispatch, user) => {
     });
 
     //Navigate to a specific scene
-    Actions.employeeList(); //check Router.js file. function name is 'key' prop of scene.
+    Actions.main(); //check Router.js file. function name is 'key' prop of scene.
 };
