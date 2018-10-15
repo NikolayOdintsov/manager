@@ -1,4 +1,8 @@
-import {EMPLOYEE_UPDATE, EMPLOYEE_CREATE} from '../actions/types';
+import {
+    EMPLOYEE_UPDATE,
+    EMPLOYEE_CREATE,
+    EMPLOYEE_SAVE_SUCCESS
+} from '../actions/types';
 
 const INITIAL_STATE = {
     name: '',
@@ -7,6 +11,8 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
+    console.log(action.type);
+
     switch (action.type) {
         case EMPLOYEE_UPDATE:
             //action.payload === {prop: 'name', value: 'Jane'}
@@ -14,6 +20,8 @@ export default (state = INITIAL_STATE, action) => {
             return {...state, [action.payload.prop]: action.payload.value};
         //This is just to clear the form
         case EMPLOYEE_CREATE:
+            return INITIAL_STATE;
+        case EMPLOYEE_SAVE_SUCCESS:
             return INITIAL_STATE;
         default:
             return state;
