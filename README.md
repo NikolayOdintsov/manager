@@ -14,3 +14,5 @@ https://github.com/reduxjs/redux-thunk
 npm install --save react-native-router-flux
 
 npm install --save lodash
+
+npm install react-native-communications
